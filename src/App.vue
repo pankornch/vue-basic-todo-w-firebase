@@ -2,9 +2,17 @@
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
+    <router-view />
   </div>
-  <router-view/>
 </template>
+
+<script>
+export default {
+  created() {
+    this.$store.dispatch("initDatabase");
+  },
+};
+</script>
 
 <style>
 #app {
